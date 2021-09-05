@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "banco-486a1": {
+      "hosting": {
+        "banco": [
+          "banco-486a1"
+        ]
+      }
+    }
+  }
+}

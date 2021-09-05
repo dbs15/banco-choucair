@@ -1,0 +1,59 @@
+<div class="container p-4">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h3>Ingresa/Edita  tu Proyecto</h3>
+          <span *ngIf="submitted && crearProyecto.invalid" class="badge badge-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+          <form class="border p-3 form-group" [formGroup]="crearProyecto" (ngSubmit)="guardarEditar()">
+            <div class="mb-2">
+              <input type="number" class="form-control"  formControlName="codigo" placeholder="Código" required="true">
+            </div>
+            <div class="mb-2">
+              <input type="text" class="form-control" formControlName="fecha"  placeholder="Fecha / formato dd-mm-AAAA" required="true">
+              <!-- <input type="date" class="form-control"  formControlNameName="fecha" placeholder="Fecha / formato dd-mm-AAAA" required="true"> -->
+            </div>
+            <div class="mb-2">
+              <input type="text" class="form-control" formControlName="nombreIniciativa"  placeholder="Nombre de la iniciativa" required="true">
+            </div>
+
+            <div class="mb-2">
+              <textarea class="form-control"  formControlName="descripcionIniciativa" rows="3" placeholder="Descripción de la iniciativa" required="true"></textarea>
+            </div>
+            <div class="mb-2">
+
+              <select class="form-select"  required formControlName="prioridad" aria-label="Grado de priorización">
+                <option selected>Seleccione una Prioridad</option>
+                <option  *ngFor = "let item of prioridades" [value]="item.id">"{{item.desc}}"</option>
+              </select>
+              <!-- <input type="text" class="form-control" id="prioridad" placeholder="Grado de priorización" required="true"> -->
+            </div>
+            <div class="mb-2">
+              <input type="text" class="form-control"  formControlName="areaResponsable" placeholder="Área responsable" required="true">
+            </div>
+            <div class="mb-2">
+              <input type="text" class="form-control"  formControlName="productOwner" placeholder="Product Owner" required="true">
+            </div>
+            <div class="mb-2">
+              <input type="text" class="form-control"  formControlName="adjuntarDocumentos" placeholder="Adjuntar Documentos" required="true">
+            </div>
+            <div class="mb-2">
+              <textarea class="form-control"  formControlName="observaciones" rows="3" placeholder="Descripción de la iniciativa" required="true"></textarea>
+            </div>
+
+
+            <div class="d-grid gap-2">
+              <button class="btn btn-dark btn-lg" type="submit"><i class="fas fa-database"></i>&nbsp;Guardar</button>
+            </div>
+
+
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>

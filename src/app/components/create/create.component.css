@@ -1,0 +1,12 @@
+.abs-center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+
+}
+
+
+.form {
+  width: 600px;
+}
